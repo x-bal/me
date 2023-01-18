@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://portfolio.m-xbal.site/api'
+axios.defaults.baseURL = 'https://me.devxbal.my.id/api'
 Vue.use(VueRouter)
 
 const routes = [
