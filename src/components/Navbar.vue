@@ -21,10 +21,9 @@
           <router-link class="nav-link" to="/projects">Projects</router-link>
           <router-link class="nav-link" to="/skills">Skills</router-link>
         </div>
-
-        <div class="d-flex" role="search">
-          <theme-button />
-        </div>
+      </div>
+      <div class="theme" role="search">
+        <theme-button />
       </div>
     </div>
   </nav>
@@ -82,5 +81,9 @@ nav {
 }
 .nav-link {
   color: v-bind(color) !important;
+}
+
+.theme {
+  /* margin-right: 50px !important; */
 }
 </style>

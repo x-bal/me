@@ -7,17 +7,19 @@
       </div>
 
       <div class="col-md-4">
-        <div class="image">
+        <div class="image float-right">
           <img :src="this.profile.image" alt="" class="img-fluid rounded" />
         </div>
+      </div>
+    </div>
 
-        <div class="social mt-3">
-          <ul class="list-group" v-for="contact in contacts" :key="contact.id">
-            <li class="list-group-item">
-              <a @click="redirect(contact.link)">{{ contact.name }}</a>
-            </li>
-          </ul>
-        </div>
+    <div class="row">
+      <div
+        class="social text-center col-md-1 mt-3"
+        v-for="contact in contacts"
+        :key="contact.id"
+      >
+        <a @click="redirect(contact.link)">{{ contact.name }}</a>
       </div>
     </div>
   </div>
