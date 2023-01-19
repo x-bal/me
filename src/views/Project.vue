@@ -7,11 +7,18 @@
         <div class="card shadow">
           <img :src="project.thumbnail" class="card-img-top" alt="" />
           <div class="card-body">
-            <h5 class="card-title">{{ project.name }}</h5>
-            <p class="card-text">
+            <h5 :class="[textClass]">{{ project.name }}</h5>
+            <p :class="[textClass]">
               {{ project.description }}
             </p>
-            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            <button
+              v-for="tag in project.tags"
+              :key="tag.id"
+              type="button"
+              class="btn btn-sm btn-primary mr-1"
+            >
+              {{ tag.name }}
+            </button>
           </div>
         </div>
       </div>
@@ -27,6 +34,7 @@ export default {
   data() {
     return {
       projects: [],
+      textClass: "text-dark",
     };
   },
 

@@ -9,10 +9,10 @@
         :key="skill.id"
       >
         <div class="card">
-          <div class="card-body">
+          <div :class="[bodyClass]">
             <img :src="skill.logo" class="img-fluid" alt="" />
-            <h5 class="card-title">{{ skill.name }}</h5>
-            <p class="card-text">{{ skill.experience }}</p>
+            <h5 :class="[textClass]">{{ skill.name }}</h5>
+            <p :class="[textClass]">{{ skill.experience }}</p>
           </div>
         </div>
       </div>
@@ -28,6 +28,8 @@ export default {
   data() {
     return {
       skills: [],
+      textClass: "text-dark",
+      bodyClass: "card-body",
     };
   },
 
@@ -37,9 +39,17 @@ export default {
 
       this.skills = data.data;
     },
+
+    getTheme() {
+      let theme = localStorage.getItem("user-theme");
+      if (theme == "dark-theme") {
+        this.textClass = "text-dark";
+      }
+    },
   },
 
   mounted() {
+    this.getTheme();
     this.getSkills();
   },
 };

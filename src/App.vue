@@ -41,7 +41,7 @@ body {
 }
 
 .bg-me {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--background-color-primary);
 }
 
